@@ -1,0 +1,116 @@
+/* Web全体の背景色,文字色の指示 */
+body {
+    background-color: #191970;
+    color: #ffffff;
+}
+
+/* Webタイトルの背景色,文字の位置,内部と外部の余白,枠線の指示 */
+#title_id {
+    background-color: #808080;
+    text-align: center;
+    margin: 2% 0% 5% 0%;
+    padding: 2% 0% 2% 0%;
+    border: 6px double #ffffff;
+}
+
+/* Webロゴの外部の余白,幅,枠線の指示 */
+#logo {
+    margin-left: 20%;
+    width: 60%;
+    border: 6px double #ffffff;
+}
+
+/* Webのsection全体の枠線,幅の指示 */
+#main {
+    border: 2px solid #ffffff;
+    /*以下二行をスライドにて作成*/
+    float: left;
+    width: 900px;
+}
+/* Webのsection h3の文字形式,下線の指示 */
+#main h3 {
+    font-style: italic;
+    text-decoration: underline;
+}
+/* Webのsection h3の文字の大きさ,下線の指示 */
+#main p {
+    font-size: 14px;
+    padding: 0px 2.5% 0px 1%;
+}
+
+/* Webのmenu_clsの内部の余白,枠線の指示 */
+.menu_cls {
+    padding-left: 1.5%;
+    border: 2px solid #ffffff;
+}
+
+/* Webのフッターの文字の位置,内部の余白の指示 */
+footer {
+    text-align: center;
+    padding-top: 60px;
+    /*以下一行をスライドにて作成*/
+    clear: both;
+}
+
+/*第二回講義にて追加したhover処理*/
+/* Webタイトルの背景色指示 */
+#title_id:hover {
+    background-color: #000000;
+}
+/* Webロゴの外部の余白,幅の指示 */
+#logo:hover {
+    margin-left: 15%;
+    width: 70%;
+}
+/* Webのmenu_clsの文字色,背景色の指示 */
+.menu_cls:hover {
+    color: #ffa500;
+    background-color: #000000;
+}
+/* Webのintroduction_1~5の文字の大きさの指示 */
+#introduction_1:hover {
+    font-size: 18px;
+}
+#introduction_2:hover {
+    font-size: 18px;
+}
+#introduction_3:hover {
+    font-size: 18px;
+}
+#introduction_4:hover {
+    font-size: 18px;
+}
+#introduction_5:hover {
+    font-size: 18px;
+}
+
+/*以下の内容はスライドを基に作成*/
+nav li {
+    display: block;
+    width: 80px;
+    float: left;
+    /*以下一行を自身で追加*/
+    margin-bottom: 10px;
+}
+nav a {
+    color: #fff;
+    background: url(green1.png) repeat-x bottom;
+    font-weight: bold;
+    display: block;
+    line-height: 1.0;
+    padding: 6px 0;
+    border-left: 1px solid #fff;
+    text-align: center;
+    text-decoration: none;
+}
+nav a:hover {
+    background: url(red1.png) repeat-x bottom;
+}
+nav #current a {
+    color: #55c;
+    background: #fff;
+}
+#page {
+    margin: 0 auto;
+    width: 900px;
+}
