@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>数あてゲーム</title>
+<script src=kazuate.js type="text/javascript">
+</script>
+<link rel="stylesheet" href="./default.css">
+</head>
+
+<body>
+<div id="page">
+
+<div id="main">
+  <section>
+    <div class="menu_cls">
+      <!-- ルール設定 -->
+      <h3>数あてゲームのルール説明</h3>
+      <p>
+        数あてゲームのルール説明を行います。<br>
+        以下の手順に従ってゲーム行ってください。<br>
+        <br>
+
+        1.始めにレベルを1~3の中から選択します。<br>
+        ボタンはレベル1であれば<button>Level1</button>、<br>
+        ボタンはレベル2であれば<button>Level2</button>、<br>
+        ボタンはレベル3であれば<button>Level3</button>をクリックしてください。<br>
+        <br>
+        
+        2.ランダムな数の決定を行います。<br>
+        Levelボタンのクリック後<button>値のリセット</button>をクリックしてください。<br>
+        <br>
+
+        3.数字の記入を行います。<br>
+        <input>の欄に数字を記入してください。<br>
+        この際、半角英数字の記入を行って下さい。<br>
+        正しく読み込まれないことがあります。<br>
+        <br>
+
+        4.数あての処理を行います。<br>
+        <button>OK</button>ボタンのクリックを行うことで数字の確認処理が行われます。<br>
+        <br>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      </p>
+
+      <!-- レベル設定 -->
+      <div>現在のレベルは<span id="level_id">未設定</span>です。</div>
+      <button onclick="level1_func()">Level1</button>
+      <button onclick="level2_func()">Level2</button>
+      <button onclick="level3_func()">Level3</button><br>
+
+      <!-- 乱数設定 -->
+      <div>乱数は<span id="reset_id">未設定</span>です。</div>
+      <button onclick="reset_func()">値のリセット</button><br>
+
+      <!-- 範囲設定 -->
+      <div>数あてゲームの範囲は<span id="rule_id">(範囲)</span>です。</div>
+
+      <!-- 入力設定 -->
+      <input id="num">
+      <button onclick="judge()">OK</button>
+      <span id="result"></span><br>
+      <span id="result_total"></span>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <!-- コピーライト -->
+  <p id="copyright">
+    <small>&copy; 2026 Yuma Endo</small>
+  </p>
+</footer>
+</div>
+</body>
+</html>
