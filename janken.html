@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>じゃんけんゲーム</title>
+<script src=janken.js type="text/javascript">
+</script>
+<link rel="stylesheet" href="./default.css">
+</head>
+<body>
+<!-- タイトル -->
+<h1>じゃんけんゲーム</h1>
+<!-- ルール選択 -->
+ゲームに応じたルールのボタンを入力してください
+<br>
+<button onclick="rule1_fnc()">ルール1</button>
+<button onclick="rule2_fnc()">ルール2</button>
+<br>
+<br>
+<!-- ルール内容 -->
+<span id="rule_1"></span>
+<span id="rule_2"></span>
+<br>
+<hr>
+<!-- ゲーム準備 -->
+<button onclick="init()">ゲーム開始</button>
+<br>
+<!-- ゲーム選択 -->
+<button onclick="game_choice_1()">1.通常のゲーム開始</button>
+<br>
+<button onclick="game_choice_2()">2.乱数ありのゲーム開始</button>
+<br>
+<!-- リセット -->
+<button id="reset_id" onclick="reset_fnc()">リセット</button>
+<button id="rand_check_id" onclick="rand_check()"></button>
+<br>
+<!-- じゃんけんの手の選択 -->
+ジャンケンの手を選択してください
+<input type="radio" name="jk" value="0">グー
+<input type="radio" name="jk" value="1">チョキ
+<input type="radio" name="jk" value="2">パー
+<br>
+<!-- OKボタン -->
+<button id="button1_id" onclick="judge()"></button>
+<button id="button2_id" onclick="random_fnc()"></button>
+<br>
+<br>
+<!-- じゃんけんの手の確率 -->
+<span id="rand_id"></span>
+<br>
+<!-- ジャンケン結果 -->
+<span id="result"></span>
+<br>
+<!-- じゃんけんに付随する結果 -->
+<span id="score_id"></span>
+<span id="count_id"></span>
+<span id="win_id"></span>
+<span id="gamejudge_id"></span>
+</body>
+</html>
