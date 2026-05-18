@@ -41,7 +41,7 @@ function rule1_fnc(){
     +"4.表示されている<button>OK</button>のボタンをクリックする。<br><br>"
     +"5.結果が表示される。<br><br>"
     +"6.1~5の手順でゲーム実行完了。<br><br>"
-    +"注意1:値のリセットを行う場合は<button>リセット</button>をクリック<br><br>"
+    +"注意1:値のリセットを行う場合は<button>リセット</button>をクリック<br>"
     +"注意2:じゃんけんの勝敗とスコア変動は以下の通りである<br>"
     +"勝ち→+2000,負け→-500,あいこ→±0,クリア→100,000以上,ゲームオーバー→0以下";
     document.getElementById("rule_1").innerHTML=rule1_mess;
