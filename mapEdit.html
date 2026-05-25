@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>リバーシ盤</title>
+        <script src="mapEdit.js" type="text/javascript">
+        </script>
+        <link rel="stylesheet" href="./default.css">
+        <link rel="stylesheet" href="./mapEdit.css">
+    </head>
+
+    <body onload="init()">
+        <!-- ゲームのルール画面 -->
+        <h3>リバーシ盤を使った、数あてゲームのルール説明</h3>
+        <span id="rule_id">
+            ☆1.ルール<br><br>
+            1.<button>スタート</button>のボタンをクリックする<br>
+            2.リバーシ盤にある盤面をクリックする<br>
+            3.クリックしていってリバーシ盤に隠れた数字を明らかにしよう<br>
+            4.例は以下の画像の通りです(=この場合に入力する値は「3」が適切)<br>
+            <img id="sample_png_id" src="sample.png"><br>
+            5.何もない盤面が<img class="b_png_cls" src="chipB.png">、
+            隠れた数字の一部を表す盤面が<img class="b_png_cls" src="chipD.png">になります<br>
+            6.ブロックのクリックは計30回まで可能です<br>
+            7.ブロックのクリックが終了したとき、あるいは数字に検討がついたとき、<br>
+            <input>の中に半角英数字を入力してください<br>
+            8.その後に<button>OK</button>を入力してください<br>
+            9.そうすることで数字の内容の正解や不正解の結果が表示されます<br>
+            10.数字の内容を変更したいとき、あるいはゲームをリセットしたいときに、<br>
+            <button>リセット</button>のボタンをクリックしてください<br>
+        </span>
+        <br><br><br><br><br><br>
+
+        <!-- ゲームの実行画面 -->
+        <h3>☆2.ゲーム</h3>
+        <button id="start_id" onclick="rand_number_fnc()">スタート</button>
+        <button id="reset_id" onclick="rand_reset_fnc()">リセット</button>
+        <br><br>
+        <table id="board"></table>
+        <h2 id="info"></h2>
+        <input id="number_check_id">
+        <button id="ok_id" onclick="ok_fnc()">OK</button><br>
+        <span id="count_id"></span><br>
+        <span id="result_id"></span>
+    </body>
+</html>
+
+<!--
+工夫した点
+・盤面(=i*j)を8*8から15*15に変更する
+・スタートボタン入力時にゲームの開始可能(=start_var)になる
+・リセットボタン入力時にゲームが初期状態(=start_var)になる
+・盤面の入力回数(=count_var)を計30回に指定する処理
+・同じ場所の盤面の入力を回数として計測しない処理(=check_var)
+・盤面に隠れた数字を当てさせるゲームの導入
+・隠れた数字が1~9(=rand_number_var_1)のうちいずれかになるような処理
+・隠れた数字の位置が盤面のランダムな位置(=rand_number_var_2)に表示される処理
+・ゲームに関わるルール,スタートボタン,リセットボタン,決定(=OK)ボタンの表示
+・「console.log();」を使ったテスト用の処理
+・リセットボタン入力時にボード(=b)が初期状態になるように外で変数の指示
+・数字の回答欄(=<input id="number_check_id">)の表示
+・回答回数(=count_var)の表示
+・回答結果(=value_var)に応じた正解か不正解のメッセージの表示
+-->
