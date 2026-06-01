@@ -19,8 +19,10 @@ let plus_score_var; //最終スコアの加点に用いる変数
 
 // タイマースタート関数,自作関数
 function timer_start_fnc(){
+    //以下2行でSTARTボタン入力時の時間取得
     start_time_var=new Date();
     ss_var=start_time_var.getSeconds();
+    //以下3行で時間数,分数,タイマーのオンオフに対応
     hc_var=0;
     mc_var=0;
     timer_var=true;
@@ -29,8 +31,10 @@ function timer_start_fnc(){
 // タイマーの時間計測関数,自作関数
 function timer_count_fnc(){
     if(timer_var==true){
+        //以下2行で現在の時間取得
         count_time_var=new Date();
         sc_var=count_time_var.getSeconds();
+        //以下の10行で時間の推移に対応
         if(sc_var>=ss_var){
             document.getElementById("timer_id").innerText=
             "現在の経過時間は"+hc_var+"時間"+mc_var+"分"+(Math.max(sc_var,ss_var)-Math.min(sc_var,ss_var))+"秒です";
@@ -46,9 +50,11 @@ function timer_count_fnc(){
 
 // タイマーの計測時間の変化対応関数,自作関数
 function timer_change_fnc(){
+    //以下3行で時間数に対応
     if((mc_var==59)&&((Math.max(sc_var,ss_var)-Math.min(sc_var,ss_var))==59)){
         hc_var+=1;
     }
+    //以下6行で分数に対応
     if((Math.max(sc_var,ss_var)-Math.min(sc_var,ss_var))==59){
         mc_var+=1;
         if(mc_var==60){
