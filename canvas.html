@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <!-- Webページタイトル -->
+        <title>Canvasアニメーション</title>
+    </head>
+    <body>
+        <!-- canvas -->
+        <canvas id="canvas" width="1280" height="640"></canvas>
+        <!-- JavaScript -->
+        <script src="canvas.js" type="text/javascript"></script>
+        <!-- ゲームのルール -->
+        <h3>Canvasアニメーションの説明</h3>
+        <span>
+            ・<button>START_1</button>をクリックすると100個の円で作られた穴の開いた円が描画されます。<br>
+            ・<button>START_2</button>をクリックするとひまわりの絵の描画されます。<br>
+            ・<button>START_3</button>をクリックすると虹の絵の描画されます。<br>
+            ・<button>START_4</button>をクリックすると直線上を移動する紙飛行機が描画されます。<br>
+            ・<button>STOP</button>をクリックすると描画が停止されます。<br>
+            ・<button>RESET</button>をクリックすると描画された内容が削除されます。<br>
+        </span>
+        <br>
+        <button id="start_id_1" onclick="start_fnc_1()">START_1</button>
+        <button id="start_id_2" onclick="start_fnc_2()">START_2</button>
+        <button id="start_id_3" onclick="start_fnc_3()">START_3</button>
+        <button id="start_id_4" onclick="start_fnc_4()">START_4</button>
+        <button id="stop_id" onclick="stop_fnc()">STOP</button>
+        <button id="reset_id" onclick="reset_fnc()">RESET</button>
+        <br>
+        <span id="count_id_1"></span>
+        <span id="count_id_2"></span>
+        <span id="count_id_3"></span>
+        <span id="count_id_4"></span>
+        <br>
+        <span id="support_id"></span>
+    </body>
+</html>
