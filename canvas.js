@@ -140,7 +140,7 @@ function anime_count_fnc_4(){
     if(count_var!=100){ //回数が100回に達するまでの処理
         reset_fnc(); //画面のリセット
         count_var+=1; //回数のカウント
-        document.getElementById("count_id_4").innerText="紙飛行機のxの現在の位置は"+(400-count_var*3)+"で,ゴールの位置まであと"+((400-count_var*3)-100)+"です。";  //紙飛行機のアニメーション終了表示
+        document.getElementById("count_id_4").innerText="紙飛行機のy座標の現在の位置は"+(400-count_var*3)+"で,ゴールの位置まであと"+((400-count_var*3)-100)+"です。";  //紙飛行機のアニメーション終了表示
         anime_func_4(); //紙飛行機のイラストの描画
         drawRct(640, 100, 0, 400, "black", false); //紙飛行機が通る位置を直線で表示,(xの中心),100(400-300),幅は0,400)
     } else { //回数が100回に達した後の処理
