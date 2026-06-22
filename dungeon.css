@@ -1,0 +1,11 @@
+#maze {
+    width: 1500px; /* width=900⇒1800 */
+    height: 1500px; /* height=600⇒1500 */
+    touch-action: none;
+}
+
+/* 説明画面のブロック画像の編集,文字に近い大きさに変更 */
+.png_cls {
+    width: 20px;
+    height: 20px;
+}

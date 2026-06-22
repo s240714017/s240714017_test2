@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <!-- Webページタイトル -->
+        <title>Dungeon</title>
+        <link rel="stylesheet" href="./dungeon.css">
+    </head>
+
+    <body onload="init()">
+        <!-- canvas -->
+        <!-- width=900⇒1500, height=600⇒1500 -->
+        <canvas id="maze" width="1500" height="1500"></canvas><br>
+        <img id="img1_id" src="chipA.png" style="display: none;">
+        <img id="img2_id" src="chipB.png" style="display: none;">
+        <img id="img3_id" src="chipC.png" style="display: none;">
+        <img id="img4_id" src="chipD.png" style="display: none;">
+        <!-- JavaScript -->
+        <script src="dungeon.js" type="text/javascript"></script>
+
+        <!--追加項目-->
+        <h3>操作説明</h3>
+        <span id="rule_id">
+            1.入力について<br>
+            ・「Wide:」の横の入力欄に数字を入れると,迷路画像が横に数字の個数分表示されます。<br>
+            ・「Height:」の横の入力欄に数字を入れると,迷路画像が縦に数字の個数分表示されます。<br>
+            ・「Size:」の横の入力欄に数字を入れると,迷路画像の縦横の大きさが数字の大きさで表示されます。<br>
+            ・「Maze_WALL:」の横の入力欄に特定の文字を入れると,迷路の壁画像が文字に対応した種類の状態で表示されます。<br>
+            ・「Maze_PATH:」の横の入力欄に特定の文字を入れると,迷路の通路画像が文字に対応した種類の状態で表示されます。<br>
+            ・以上の変更を行った後は<button>CHANGE</button>を入力することで変更を反映できます。<br>
+            ・エラー内容は<button>CHANGE</button>と<button>RESET</button>の下に表示されるので,確認してください。
+            <br><br><br>
+            2.注意<br>
+            ・「Maze_WALL:」と「Maze_PATH:」の横の入力欄に対しては「ChipA」,「ChipB」,「ChipC」,「ChipD」の4つの内のいずれか1つを入力してください。<br>
+            ・「ChipA」は<img class="png_cls" src="ChipA.png">,「ChipB」は<img class="png_cls" src="ChipB.png">,「ChipC」は<img class="png_cls" src="ChipC.png">,「ChipD」は<img class="png_cls" src="ChipD.png">が迷路の画面として表示されます。<br>
+            ・以上の4つの内のいずれかでない文字が入力された際にエラーとなります。<br>
+            ・また、壁画像と通路画像を同じ画像で指定した際にもエラーとなります。<br>
+            ・「Wide」*「Size」の値,「Height」*「Size」の値が1500を上回った際にエラーとなります。<br>
+            ・変更を初期化させたい場合は<button>RESET</button>を入力することで初期化させることができます。<br>
+            <br><br><br>
+        </span>
+
+        <span>3.操作画面</span><br>
+        <span>Wide:</span><input id="wide_id" value="31"><br>
+        <span>Height:</span><input id="height_id" value="31"><br>
+        <span>Size:</span><input id="size_id" value="16"><br>
+        <span>Maze_WALL:<input id="maze_wall_image_id" value="ChipA"></span><br>
+        <span>Maze_PATH:<input id="maze_path_image_id" value="ChipB"></span><br>
+        <button onclick="change_fnc()">CHANGE</button>
+        <button onclick="reset_fnc()">RESET</button><br>
+        <br><br><br>
+        
+        <span>4.エラーメッセージ</span><br>
+        <span id="error_mess_id"></span>
+    </body>
+</html>
