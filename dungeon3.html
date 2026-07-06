@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <!-- Webページタイトル -->
+        <title>Dungeon</title>
+        <link rel="stylesheet" href="./dungeon.css">
+    </head>
+
+    <body onload="init()">
+        <h3 id="timer_id"></h3>
+
+        <!-- canvas -->
+        <!-- width=900⇒1500, height=600⇒1500 -->
+        <canvas id="maze" width="1500" height="1500"></canvas><br>
+        <!-- JavaScript -->
+        <script src="dungeon3.js" type="text/javascript"></script>
+        <!-- 画像 -->
+        <!-- 壁画像(計5つ) -->
+        <img id="img1_id" src="chipA.png" style="display: none;">
+        <img id="img2_id" src="chipB.png" style="display: none;">
+        <img id="img3_id" src="chipC.png" style="display: none;">
+        <img id="img4_id" src="chipD.png" style="display: none;">
+        <img id="img5_id" src="chipE.png" style="display: none;">
+        <!-- アバター画像(計4つ) -->
+        <img id="hero0" src="hero0.png" style="display: none;">
+        <img id="hero1" src="hero1.png" style="display: none;">
+        <img id="hero2" src="hero2.png" style="display: none;">
+        <img id="hero3" src="hero3.png" style="display: none;">
+
+        <!--追加項目-->
+        <h3>操作説明</h3>
+        <span id="rule_id">
+            1.入力について<br>
+            ・「Wide:」の横の入力欄に数字を入れると,迷路画像が横に数字の個数分表示されます。<br>
+            ・「Height:」の横の入力欄に数字を入れると,迷路画像が縦に数字の個数分表示されます。<br>
+            ・「Size:」の横の入力欄に数字を入れると,迷路画像の縦横の大きさが数字の大きさで表示されます。<br>
+            ・「Maze_WALL:」の横の入力欄に特定の文字を入れると,迷路の壁画像が文字に対応した種類の状態で表示されます。<br>
+            ・「Maze_PATH:」の横の入力欄に特定の文字を入れると,迷路の通路画像が文字に対応した種類の状態で表示されます。<br>
+            ・「Maze_SPEED_UP_PATH:」の横の入力欄に特定の文字を入れると,迷路の速度増加通路の画像が文字に対応した種類の状態で表示されます。<br>
+            ・「Maze_WARP_PATH:」の横の入力欄に特定の文字を入れると,迷路の瞬間移動通路の画像が文字に対応した種類の状態で表示されます。<br>
+            ・「Maze_GOAL:」の横の入力欄に特定の文字を入れると,迷路のゴールの画像が文字に対応した種類の状態で表示されます。<br>
+            ・「Timer:」の横の入力欄に数字を入れると,指定された制限時間ゲームができます。<br>
+            ・「PlayerName:」の横の入力欄に特定の文字を入れると,ユーザーネームが保持されます。<br>
+            ・以上の変更を行った後は<button>CHANGE</button>を入力することで変更を反映できます。<br>
+            ・エラー内容は<button>CHANGE</button>と<button>RESET</button>の下に表示されるので,確認してください。
+            <br><br><br>
+            2.注意<br>
+            ・「Maze_WALL:」,「Maze_PATH」,「Maze_SPEED_UP_PATH」,「Maze_WARP_PATH」,「Maze_GOAL」の横の入力欄に対しては「ChipA」,「ChipB」,「ChipC」,「ChipD」の4つの内のいずれか1つを入力してください。<br>
+            ・「ChipA」は<img class="png_cls" src="chipA.png">,「ChipB」は<img class="png_cls" src="chipB.png">,「ChipC」は<img class="png_cls" src="chipC.png">,「ChipD」は<img class="png_cls" src="chipD.png">,「ChipE」は<img class="png_cls" src="chipE.png">が迷路の画面として表示されます。<br>
+            ・以上の4つの内のいずれかでない文字が入力された際にエラーとなります。<br>
+            ・また、壁画像,通路画像,速度増加通路の画像,瞬間移動通路,ゴールの画像を同じ画像で指定した際にもエラーとなります。<br>
+            ・「Wide」*「Size」の値,「Height」*「Size」の値が1500pxを上回った際にエラーとなります。<br>
+            ・変更を初期化させたい場合は<button>RESET</button>を入力することで初期化させることができます。<br>
+            <br><br><br>
+        </span>
+
+        <span>3.操作画面</span><br>
+        <span>Wide:</span><input id="wide_id" value="31"><br>
+        <span>Height:</span><input id="height_id" value="31"><br>
+        <span>Size:</span><input id="size_id" value="32"><br>
+        <span>Maze_WALL:<input id="maze_wall_image_id" value="ChipA"></span><br>
+        <span>Maze_PATH:<input id="maze_path_image_id" value="ChipB"></span><br>
+        <span>Maze_SPEED_UP_PATH:<input id="maze_speedup_path_image_id" value="ChipC"></span><br>
+        <span>Maze_WARP_PATH:<input id="maze_warp_path_image_id" value="ChipD"></span><br>
+        <span>Maze_GOAL:<input id="maze_goal_image_id" value="ChipE"></span><br>
+        <span>Timer:</span><input id="timer_value_id" value="60"><br>
+        <span>PlayerName:</span><input id="player_name_id" value="Player"><br>
+        <span id="score_id"></span>
+        <span id="game_clear_id"></span>
+
+        <button onclick="change_fnc()">CHANGE</button>
+        <button onclick="reset_fnc()">RESET</button>
+        <button onclick="start_fnc()">START</button><br>
+        <br><br><br>
+
+        <span>4.エラーメッセージ</span><br>
+        <span id="error_mess_id"></span>
+    </body>
+</html>
