@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Puyo</title>
+        <link rel="stylesheet" href="./puyo.css">
+    </head>
+    <body onload="init()">
+        <!-- canvas(800*800から1100*1100に変更) -->
+        <canvas id="canvas" width="1100" height="1100"></canvas>
+        <script src="puyo3.js" type="text/javascript"></script>
+        <br><br><br>
+        <!-- REPLAY(再プレイ),RESET(初期化),CHANGE(大きさや速さ)ボタンの追加 -->
+        <button id="replay_id" onclick="replay_fnc()">REPLAY</button>
+        <button id="reset_id" onclick="reset_fnc()">RESET</button>
+        <button id="change_id" onclick="change_fnc()">CHANGE</button>
+        <br>
+        <!-- ゲーム時のぷよ移動できる幅と高さの入力欄 -->
+        <div>横:<input id="yoko_id" value="6"></div>
+        <div>縦:<input id="tate_id" value="13"></div>
+        <!-- ゲーム時の速度の値の入力欄 -->
+        <div>スピード:<input id="speed_level_id" value="5"></div>
+        <br>
+        <!-- ゲームのルール -->
+        <div>ルール</div>
+        <div>・<button>REPLAY</button>をクリックすると直前の設定で改めてゲームをプレイできます。(初めてゲームをプレイする場合は横=6,縦=13,スピード=5の設定でのプレイとなります。)</div>
+        <div>・<button>RESET</button>をクリックすると初期状態である横=6,縦=13,スピード=5の設定に初期化されます。</div>
+        <div>・<button>CHANGE</button>をクリックすると以下に記載している「横縦の大きさ」,「速度」の変更事項を適応できます。(変更事項を入力→<button>CHANGE</button>のクリックで適応可能です。)</div>
+        <div>・「横:<input>」の欄に6~16の数字を入力すると,その数字に対応した幅のゲーム画面が表示されます。</div>
+        <div>・「縦:<input>」の欄に13~23の数字を入力すると,その数字に対応した高さのゲーム画面が表示されます。</div>
+        <div>・「スピード:<input>」の欄に1~9の数字を入力すると,その数字に対応した速度でゲームをプレイできます。(1の速度が最も遅く,9の速度が最も速くなるような設定です。)</div>
+        <div>・以上三つの変更内容として不適切な値の入力や未入力が見られた際には,以下にエラー内容が表示されます。</div>
+        <br>
+        <!-- ゲーム時のエラー出力欄 -->
+        <div>エラー内容</div>
+        <div id="error_yoko_id"></div>
+        <div id="error_tate_id"></div>
+        <div id="error_speed_id"></div>
+    </body>
+</html>
